@@ -1,6 +1,6 @@
 //Fernández María Pilar
 //Comisión 1
-//https://youtu.be/MssM2sFAqnM
+//https://youtu.be/C-6TOKBiyGo
 
 let nroCuad = 13;       // Numero de cuadrados enteros de la grilla
 let grilTam = 400;      // Tamaño de la grilla 400x400 pixeles      
