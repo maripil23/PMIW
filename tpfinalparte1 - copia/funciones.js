@@ -13,35 +13,18 @@ function dibujarRectangulo(x, y, ancho, alto){
   stroke(255);
   rect(x, y, ancho, alto);
 }
-function configurarTextos(miFuenteDos){
-  textAlign(CENTER, CENTER);
-  fill(0);
-  noStroke();
-  textSize(15);
-  textFont(miFuenteDos);
-}
-function configurarTitulos(miFuente){
-  textAlign(CENTER, CENTER);
-  fill(219,182,127);
-  stroke(255);
-  strokeWeight(2);
-  textSize(60);
+function configurarTexto(miFuente, tamano, colorRelleno, colorTrazo, grosorTrazo, alineacionX, alineacionY) {
+  textAlign(alineacionX, alineacionY);
+  fill(colorRelleno);
+  
+  if (colorTrazo !== undefined && grosorTrazo !== undefined) {
+    stroke(colorTrazo);
+    strokeWeight(grosorTrazo);
+  } else {
+    noStroke();
+  }
+  textSize(tamano);
   textFont(miFuente);
-}
-function configurarCreditos(miFuente){
-  textAlign(CENTER, CENTER);
-  fill(219,182,127);
-  stroke(255);
-  strokeWeight(2);
-  textSize(40);
-  textFont(miFuente);
-}
-function configurarCuentos(miFuenteDos){
-  textAlign(LEFT, LEFT);
-  fill(0);
-  noStroke();
-  textSize(10);
-  textFont(miFuenteDos);
 }
 function detectarRectanguloPresionado(){
   if(mouseX > 240 && mouseX < 400 && mouseY > 300 && mouseY < 360){
@@ -160,104 +143,104 @@ function ejecutarTextos(){
   if(escenaActual === 1){
     dibujarRectangulo(rectposx+240, rectposy, anchorect, altorect);
     dibujarRectangulo(rectposx, rectposy+120, anchorect, altorect);
-    configurarTextos(miFuenteDos);
+    configurarTexto(miFuenteDos, 15, 0, undefined, undefined, CENTER, CENTER);
     text('Empezar', rectposx+240, rectposy, anchorect, altorect);
     text('Créditos', rectposx, rectposy+120, anchorect, altorect);
-    configurarTitulos(miFuente);
+    configurarTexto(miFuente, 60, [219, 182, 127], 255, 2, CENTER, CENTER);
     text('LA NOCHE \n BOCA ARRIBA', rectposx+40, rectposy-200, anchorect+380, altorect+80);    
   }
   else if(escenaActual === 0){
     dibujarRectangulo(rectposx, rectposy+120, anchorect, altorect);
-    configurarTextos(miFuenteDos);
+    configurarTexto(miFuenteDos, 15, 0, undefined, undefined, CENTER, CENTER);
     text('Volver', rectposx, rectposy+120, anchorect, altorect);
-    configurarCreditos(miFuente);
+    configurarTexto(miFuente, 40, [219, 182, 127], 255, 2, CENTER, CENTER);
     text('Julio Cortazar\nALUMNAS: Floch Micaela, Fernandez Maria Pilar. \nCOMISIÓN 1: Jose Luis Bugiolachi, Fernando Cardos', rectposx+40, rectposy-300, anchorect+380, altorect+240); 
   }
   else if(escenaActual === 2){
     dibujarRectangulo(rectposx+25, rectposy+50, anchorect+430, altorect+40);
-    configurarCuentos(miFuenteDos);
+    configurarTexto(miFuenteDos, 10, 0, undefined, undefined, LEFT, LEFT);
     text(textos[2], rectposx+25, rectposy+70, anchorect+430, altorect+40);
   }
   else if(escenaActual === 3){
     dibujarRectangulo(rectposx+80, rectposy, anchorect, altorect);
     dibujarRectangulo(rectposx+400, rectposy, anchorect, altorect);
-    configurarTextos(miFuenteDos);
+    configurarTexto(miFuenteDos, 15, 0, undefined, undefined, CENTER, CENTER);
     text('Esquivar a la mujer y caerse',rectposx+80, rectposy, anchorect, altorect);
     text('Atropellar a la mujer',rectposx+400, rectposy, anchorect, altorect);
   }
   else if(escenaActual === 4){
     dibujarRectangulo(rectposx+25, rectposy+50, anchorect+430, altorect+40)
-    configurarCuentos(miFuenteDos);
+    configurarTexto(miFuenteDos, 10, 0, undefined, undefined, LEFT, LEFT);
     text(textos[4] , rectposx+25, rectposy+70, anchorect+430, altorect+40);
   }
   else if(escenaActual === 5){
     dibujarRectangulo(rectposx+80, rectposy, anchorect, altorect);
     dibujarRectangulo(rectposx+400, rectposy, anchorect, altorect);
-    configurarTextos(miFuenteDos);
+    configurarTexto(miFuenteDos, 15, 0, undefined, undefined, CENTER, CENTER);
     text('Resistirse a la sedación',rectposx+80, rectposy, anchorect, altorect);
     text('Aceptar la sedación', rectposx+400, rectposy, anchorect, altorect);
   }
   else if(escenaActual === 6){
     dibujarRectangulo(rectposx+25, rectposy+50, anchorect+430, altorect+40);
-    configurarCuentos(miFuenteDos);
+    configurarTexto(miFuenteDos, 10, 0, undefined, undefined, LEFT, LEFT);
     text(textos[6] , rectposx+25, rectposy+70, anchorect+430, altorect+40);
   }
   else if(escenaActual === 7){
     dibujarRectangulo(rectposx+25, rectposy+50, anchorect+430, altorect+40);
-    configurarCuentos(miFuenteDos);
+    configurarTexto(miFuenteDos, 10, 0, undefined, undefined, LEFT, LEFT);
     text(textos [7] , rectposx+25, rectposy+70, anchorect+430, altorect+40);
   }
   else if(escenaActual === 8){
     dibujarRectangulo(rectposx+80, rectposy, anchorect, altorect);
     dibujarRectangulo(rectposx+400, rectposy, anchorect, altorect);
-    configurarTextos(miFuenteDos);
+    configurarTexto(miFuenteDos, 15, 0, undefined, undefined, CENTER, CENTER);
     text('Correr por la jungla sin rumbo',rectposx+80, rectposy, anchorect, altorect);
     text('Buscar un escondite temporal', rectposx+400, rectposy, anchorect, altorect);
   }
   else if(escenaActual === 9){
     dibujarRectangulo(rectposx+25, rectposy+50, anchorect+430, altorect+40);
-    configurarCuentos(miFuenteDos);
+    configurarTexto(miFuenteDos, 10, 0, undefined, undefined, LEFT, LEFT);
     text(textos [9] , rectposx+25, rectposy+70, anchorect+430, altorect+40);
   }
   else if(escenaActual === 10){
     dibujarRectangulo(rectposx+80, rectposy, anchorect, altorect);
     dibujarRectangulo(rectposx+400, rectposy, anchorect, altorect);
-    configurarTextos(miFuenteDos);
+    configurarTexto(miFuenteDos, 15, 0, undefined, undefined, CENTER, CENTER);
     text('Intentar no dormirse de nuevo',rectposx+80, rectposy, anchorect, altorect);
     text('Quedarse inmóvil y aceptar el dolor', rectposx+400, rectposy, anchorect, altorect);
   }
   else if(escenaActual === 11 ){
     dibujarRectangulo(rectposx+25, rectposy+50, anchorect+430, altorect+40);
-    configurarCuentos(miFuenteDos);
+    configurarTexto(miFuenteDos, 10, 0, undefined, undefined, LEFT, LEFT);
     text(textos [11] , rectposx+25, rectposy+70, anchorect+430, altorect+40);
   }
   else if(escenaActual === 12){
     dibujarRectangulo(rectposx+80, rectposy, anchorect, altorect);
     dibujarRectangulo(rectposx+400, rectposy, anchorect, altorect);
-    configurarTextos(miFuenteDos);
+    configurarTexto(miFuenteDos, 15, 0, undefined, undefined, CENTER, CENTER);
     text('Luchar contra el guerrero', rectposx+80, rectposy, anchorect, altorect);
     text('Subir a un arbol para esconderse', rectposx+400, rectposy, anchorect, altorect);
   }
   else if(escenaActual === 13 ){
     dibujarRectangulo(rectposx+25, rectposy+50, anchorect+430, altorect+40);
-    configurarTextos(miFuenteDos);
-    text('ACA VA EL JUEGO' , rectposx+25, rectposy+50, anchorect+430, altorect+40);
+    configurarTexto(miFuenteDos, 10, 0, undefined, undefined, LEFT, LEFT);
+    text('ACA VA EL JUEGO' , rectposx+280, rectposy+100, anchorect+430, altorect+40);
   }
   else if(escenaActual === 14){
     dibujarRectangulo(rectposx+25, rectposy+50, anchorect+430, altorect+40);
-    configurarCuentos(miFuenteDos);
+    configurarTexto(miFuenteDos, 10, 0, undefined, undefined, LEFT, LEFT);
     text(textos [14], rectposx+25, rectposy+70, anchorect+430, altorect+40);
   }
   else if(escenaActual === 15){
     dibujarRectangulo(rectposx+80, rectposy, anchorect, altorect);
     dibujarRectangulo(rectposx+400, rectposy, anchorect, altorect);
-    configurarTextos(miFuenteDos);
+    configurarTexto(miFuenteDos, 15, 0, undefined, undefined, CENTER, CENTER);
     text('Completar el tratamiento médico',rectposx+80, rectposy, anchorect, altorect);
     text('Negarse a recibir más ayuda médica', rectposx+400, rectposy, anchorect, altorect);
   }
   else if(escenaActual === 16){
     dibujarRectangulo(rectposx+25, rectposy+50, anchorect+430, altorect+40);
-    configurarCuentos(miFuenteDos);
+    configurarTexto(miFuenteDos, 10, 0, undefined, undefined, LEFT, LEFT);
     text(textos [16], rectposx+25, rectposy+70, anchorect+430, altorect+40);
   }
 }
