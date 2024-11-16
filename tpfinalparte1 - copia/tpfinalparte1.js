@@ -3,12 +3,9 @@
 let imagenes = [], textos = [];
 let escenaActual;
 let anchoCanvas = 640; let altoCanvas = 480;
-let miFuente, miFuenteDos;
+let miFuente, miFuenteDos, sonido;
 let rectanguloPresionado;
-let sonido;
-let rectangulosIzquierda = [], rectangulosDerecha = [], rectangulosCentro = [], rectanguloEspecial = [], rectangulosCuentos = [];
-//rectangulos
-let anchorect, altorect, rectposx, rectposy;
+let anchorect, altorect, rectposx, rectposy;//rectangulos
 
 function preload() {
   miFuente = loadFont('fonts/rans____.ttf');
@@ -32,8 +29,7 @@ function draw() {
   //Mostrar la imagen
   image(imagenes[escenaActual], 0, 0);
   console.log('Escena actual: ' + escenaActual);
-  //Dibujar rectangulos
-  ejecutarTextos();
+  ejecutarTextos(); //Dibujar rectangulos
 }   
 function mousePressed() {
   rectanguloPresionado = detectarRectanguloPresionado();  
