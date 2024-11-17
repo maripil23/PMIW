@@ -1,5 +1,5 @@
 // Floch Micaela, Fernandez Maria Pilar. Comision 1.
-// link yt
+// https://youtu.be/XjhdQBXYq_g
 let objJuego, imagenes = [], sonidos = [];
 
 function preload() {
